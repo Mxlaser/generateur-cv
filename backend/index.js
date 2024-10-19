@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const userRoutes = require('./routes/userRoutes');
+const cvRoutes = require('./routes/cvRoutes'); // Importez les routes CV
 
 dotenv.config();
 
@@ -16,6 +18,10 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('API Générateur de CV');
 });
+
+// Utilisation des routes d'authentification
+app.use('/api/users', userRoutes);
+app.use('/api/cvs', cvRoutes); // Ajoutez les routes CV ici
 
 // Connexion à MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
