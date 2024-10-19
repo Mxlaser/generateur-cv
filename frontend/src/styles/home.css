@@ -1,0 +1,74 @@
+/* Home.css */
+
+/* Assurer que tout le body occupe l'intégralité de la page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e0f7fa; /* Couleur de fond homogène pour toute la page */
+  }
+  
+  /* Conteneur principal du contenu */
+  .home-container {
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Contenu centré */
+  .home-content {
+    background-color: transparent; /* Supprimer le fond blanc pour uniformiser le tout */
+    padding: 20px;
+  }
+  
+  /* Titre bien visible */
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Description */
+  .home-description {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Alignement des boutons */
+  .home-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  /* Styles des boutons */
+  .home-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button {
+    background-color: #3498db;
+  }
+  
+  .login-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .register-button {
+    background-color: #2ecc71;
+  }
+  
+  .register-button:hover {
+    background-color: #27ae60;
+  }
+  

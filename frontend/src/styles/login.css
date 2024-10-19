@@ -1,0 +1,62 @@
+/* global.css ou dans un fichier CSS spécifique à la page de connexion */
+
+/* Conteneur de la page pour centrer le formulaire */
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0f7fa; /* Couleur de fond douce */
+    padding: 20px;
+  }
+  
+  /* Style du formulaire */
+  form {
+    background-color: #fff;
+    padding: 40px; /* Augmente le padding pour plus d'espace intérieur */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
+    width: 100%;
+    max-width: 500px; /* Agrandit le cadre blanc à 500px */
+    box-sizing: border-box;
+  }
+  
+  /* Titres */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Champs de saisie */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #3498db; /* Couleur de bordure lorsqu'un champ est actif */
+  }
+  
+  /* Bouton de connexion */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
