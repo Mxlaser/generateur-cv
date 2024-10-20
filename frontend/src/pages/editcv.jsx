@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/createcv.css'; 
+import '../styles/editcv.css';
 
 function EditCV() {
     const { id } = useParams();
@@ -34,14 +34,12 @@ function EditCV() {
       setCvData({ ...cvData, [e.target.name]: e.target.value });
     };
   
-    // Gérer les changements pour les expériences pédagogiques
     const handleEducationChange = (index, field, value) => {
       const newEducation = [...cvData.experiencesPédagogiques];
       newEducation[index][field] = value;
       setCvData({ ...cvData, experiencesPédagogiques: newEducation });
     };
   
-    // Gérer les changements pour les expériences professionnelles
     const handleWorkChange = (index, field, value) => {
       const newWork = [...cvData.experiencesProfessionnelles];
       newWork[index][field] = value;
@@ -56,14 +54,14 @@ function EditCV() {
         await axios.put(`http://localhost:5000/api/cvs/${id}`, cvData, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        navigate('/dashboard'); // Rediriger vers le tableau de bord après modification
+        navigate('/dashboard');
       } catch (error) {
         console.error('Erreur lors de la modification du CV', error);
       }
     };
   
     return (
-      <div className="page-container">
+      <div className="page-container-edit">
         <h2 className="page-title">Modifier CV</h2>
         <form onSubmit={handleSubmit}>
           <div>
@@ -79,7 +77,6 @@ function EditCV() {
             <textarea name="description" value={cvData.description} onChange={handleChange} required></textarea>
           </div>
   
-          {/* Section pour les expériences pédagogiques */}
           <h3>Expériences Pédagogiques</h3>
           {cvData.experiencesPédagogiques.map((exp, index) => (
             <div key={index}>
@@ -110,7 +107,6 @@ function EditCV() {
             </div>
           ))}
   
-          {/* Section pour les expériences professionnelles */}
           <h3>Expériences Professionnelles</h3>
           {cvData.experiencesProfessionnelles.map((exp, index) => (
             <div key={index}>

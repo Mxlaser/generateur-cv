@@ -23,13 +23,12 @@ function Dashboard() {
     cv.nom.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Fonction pour rediriger vers la page de détails du CV
   const handleViewDetails = (id) => {
     navigate(`/cvs/${id}`);
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container-dashboard">
       <h2 className="page-title">Mes CV</h2>
       <input
         type="text"

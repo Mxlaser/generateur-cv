@@ -1,47 +1,89 @@
+/* CVDetails.css */
+
+/* Conteneur principal pour les détails du CV */
 .cv-details-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cv-details-container h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .cv-details-container h3 {
-    font-size: 20px;
-    margin-top: 20px;
-    color: #2c3e50;
-  }
-  
-  .cv-details-container p {
-    font-size: 16px;
-    margin: 10px 0;
-  }
-  
-  .cv-details-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .cv-details-container ul li {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cv-details-container ul li p {
-    margin: 5px 0;
-  }
-  
-  .cv-details-container ul li:nth-child(odd) {
-    background-color: #f0f8ff;
-  }
-  
+  display: flex;
+  flex-direction: column; /* Aligne les éléments en colonne */
+  justify-content: center; /* Centre verticalement */
+  align-items: center; /* Centre horizontalement */
+  padding: 20px; /* Espacement interne */
+  max-width: 800px; /* Largeur maximale */
+  margin: auto; /* Centre le conteneur */
+  background-color: #f9f9f9; /* Couleur de fond légèrement grise */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style du titre principal */
+.cv-details-container h2 {
+  font-size: 2rem; /* Taille de la police */
+  margin-bottom: 20px; /* Espacement en bas */
+}
+
+/* Style de la description */
+.cv-details-container p {
+  font-size: 1.2rem; /* Taille de la police */
+  color: #333; /* Couleur du texte */
+  margin-bottom: 15px; /* Espacement en bas */
+}
+
+/* Styles pour les sections */
+.cv-details-container h3 {
+  font-size: 1.5rem; /* Taille de la police */
+  margin-top: 20px; /* Espacement en haut */
+  margin-bottom: 10px; /* Espacement en bas */
+  color: #007bff; /* Couleur bleue pour les titres de section */
+}
+
+/* Style de la liste des expériences */
+.cv-details-container ul {
+  list-style-type: none; /* Enlève les puces */
+  padding: 0; /* Enlève le padding */
+  width: 100%; /* Prend toute la largeur disponible */
+}
+
+/* Style de chaque élément de la liste */
+.cv-details-container li {
+  background-color: white; /* Fond blanc pour chaque élément */
+  padding: 15px; /* Espacement interne */
+  margin-bottom: 10px; /* Espacement en bas */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style de la zone de nouvelle recommandation */
+.nouvelle-recommandation {
+  margin-top: 20px; /* Espacement en haut */
+  display: flex; /* Utilise flex pour aligner textarea et button */
+  flex-direction: column; /* Aligne les éléments en colonne */
+  align-items: center; /* Centre horizontalement */
+  width: 100%; /* Prend toute la largeur disponible */
+}
+
+/* Style du textarea pour les nouvelles recommandations */
+.nouvelle-recommandation textarea {
+  width: 100%; /* Prend toute la largeur disponible */
+  max-width: 500px; /* Largeur maximale */
+  height: 100px; /* Hauteur fixe */
+  padding: 10px; /* Espacement interne */
+  border: 1px solid #ccc; /* Bordure grise claire */
+  border-radius: 5px; /* Coins arrondis */
+  margin-bottom: 10px; /* Espacement en bas */
+  resize: none; /* Empêche le redimensionnement */
+}
+
+/* Style du bouton d'ajout */
+.nouvelle-recommandation button {
+  padding: 10px 15px; /* Espacement interne */
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Couleur du texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur en main pour le bouton */
+  transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+/* Effet de survol pour le bouton d'ajout */
+.nouvelle-recommandation button:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}

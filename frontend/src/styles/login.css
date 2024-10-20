@@ -1,62 +1,73 @@
-/* global.css ou dans un fichier CSS spécifique à la page de connexion */
+/* login.css */
 
-/* Conteneur de la page pour centrer le formulaire */
-.page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #e0f7fa; /* Couleur de fond douce */
-    padding: 20px;
-  }
-  
-  /* Style du formulaire */
-  form {
-    background-color: #fff;
-    padding: 40px; /* Augmente le padding pour plus d'espace intérieur */
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
-    width: 100%;
-    max-width: 500px; /* Agrandit le cadre blanc à 500px */
-    box-sizing: border-box;
-  }
-  
-  /* Titres */
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Champs de saisie */
-  input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #3498db; /* Couleur de bordure lorsqu'un champ est actif */
-  }
-  
-  /* Bouton de connexion */
-  button {
-    width: 100%;
-    padding: 12px;
-    background-color: #3498db;
-    color: white;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #2980b9;
-  }
-  
+/* Conteneur principal pour la page de connexion */
+.login-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 100vh; /* Hauteur complète de la fenêtre */
+  background-color: #f0f4f8; /* Couleur de fond légère */
+}
+
+/* Style du formulaire de connexion */
+.login-form {
+  background-color: white; /* Fond blanc pour le formulaire */
+  padding: 40px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  max-width: 400px; /* Largeur maximale du formulaire */
+  width: 100%; /* Prend toute la largeur disponible */
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+/* Style des titres */
+.login-container h2 {
+  text-align: center; /* Centre le titre */
+  margin-bottom: 20px; /* Espacement en bas */
+}
+
+/* Style des champs du formulaire */
+.login-form div {
+  margin-bottom: 15px; /* Espacement entre les champs */
+}
+
+/* Style des étiquettes */
+.login-form label {
+  display: block; /* Affiche les étiquettes sur une nouvelle ligne */
+  margin-bottom: 5px; /* Espacement en bas des étiquettes */
+  font-weight: bold; /* Met en gras les étiquettes */
+}
+
+/* Style des champs de saisie */
+.login-form input {
+  width: 100%; /* Prend toute la largeur disponible */
+  padding: 10px; /* Espacement interne */
+  border: 1px solid #ccc; /* Bordure grise claire */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 1rem; /* Taille de la police */
+}
+
+/* Style du bouton de soumission */
+.login-form button {
+  width: 100%; /* Prend toute la largeur disponible */
+  padding: 10px; /* Espacement interne */
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Couleur du texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 1rem; /* Taille de la police */
+  cursor: pointer; /* Curseur en main pour le bouton */
+  transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+/* Effet de survol pour le bouton */
+.login-form button:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Style pour les messages d'erreur */
+.error-message {
+  color: red; /* Couleur rouge pour le texte d'erreur */
+  text-align: center; /* Centre le texte d'erreur */
+  margin-bottom: 15px; /* Espacement en bas du message */
+}

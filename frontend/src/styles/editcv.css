@@ -1,0 +1,88 @@
+/* createcv.css */
+
+/* Styles généraux pour la page */
+body {
+    margin: 0; /* Suppression des marges par défaut */
+    padding: 0; /* Suppression du padding par défaut */
+    font-family: Arial, sans-serif; /* Choix de la police */
+    background-color: #f0f0f0; /* Couleur de fond pour toute la page */
+  }
+  
+  .page-container-edit {
+    max-width: 800px; /* Largeur maximale de la page */
+    margin: 20px auto; /* Centrage horizontal avec une marge en haut */
+    padding: 20px; /* Espacement interne */
+    background-color: #ffffff; /* Couleur de fond blanche */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    overflow: auto; /* Gestion du débordement */
+  }
+  
+  /* Titre de la page */
+  .page-title {
+    text-align: center; /* Centrer le titre */
+    font-size: 2rem; /* Taille de police pour le titre */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 20px; /* Marge en bas */
+  }
+  
+  /* Styles pour les labels */
+  label {
+    display: block; /* Affiche chaque label sur une nouvelle ligne */
+    margin: 10px 0 5px; /* Espacement autour des labels */
+    font-weight: bold; /* Met le texte en gras */
+    color: #555; /* Couleur du texte */
+  }
+  
+  /* Styles pour les champs de texte */
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: calc(100% - 22px); /* Largeur complète, moins le padding et la bordure */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    margin-bottom: 15px; /* Espacement en bas */
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+  }
+  
+  /* Styles pour le textarea */
+  textarea {
+    height: 80px; /* Hauteur fixe */
+    resize: vertical; /* Permet le redimensionnement vertical */
+  }
+  
+  /* Styles pour les sections d'expérience */
+  h3 {
+    font-size: 1.5rem; /* Taille de la police pour les sous-titres */
+    color: #007bff; /* Couleur bleue */
+    margin-top: 20px; /* Marge en haut */
+    margin-bottom: 10px; /* Marge en bas */
+  }
+  
+  /* Styles pour le bouton de soumission */
+  button {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main pour le bouton */
+    font-size: 1rem; /* Taille de police du bouton */
+    margin-top: 10px; /* Marge au-dessus du bouton */
+  }
+  
+  /* Effet de survol pour le bouton */
+  button:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+  }
+  
+  /* Styles pour les erreurs */
+  .error {
+    color: red; /* Couleur rouge pour les messages d'erreur */
+    font-size: 0.9rem; /* Taille de police plus petite */
+    margin-top: -10px; /* Déplacer légèrement vers le haut */
+    margin-bottom: 15px; /* Espacement en bas */
+  }
+  

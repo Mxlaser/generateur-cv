@@ -1,6 +1,7 @@
 const express = require('express');
 const authMiddleware = require('../middleware/authMiddleware');
 const CV = require('../models/CV');
+const User = require('../models/User');
 
 const router = express.Router();
 
@@ -13,7 +14,6 @@ router.get('/users', authMiddleware, async (req, res) => {
   }
 });
 
-// Créer un nouveau CV
 router.post('/', authMiddleware, async (req, res) => {
   try {
     const { nom, prénom, description, experiencesPédagogiques, experiencesProfessionnelles, visibilité } = req.body;
@@ -34,7 +34,6 @@ router.post('/', authMiddleware, async (req, res) => {
   }
 });
 
-// Obtenir tous les CV visibles
 router.get('/', async (req, res) => {
   try {
     const cvs = await CV.find({ visibilité: true });
@@ -44,7 +43,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Obtenir un CV par ID
 router.get('/:id', async (req, res) => {
   try {
     const cv = await CV.findById(req.params.id);
@@ -57,7 +55,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Modifier un CV
 router.put('/:id', authMiddleware, async (req, res) => {
   try {
     const { nom, prénom, description, experiencesPédagogiques, experiencesProfessionnelles, visibilité } = req.body;
@@ -76,19 +73,48 @@ router.put('/:id', authMiddleware, async (req, res) => {
   }
 });
 
-// Supprimer un CV
 router.delete('/:id', authMiddleware, async (req, res) => {
   try {
     const cv = await CV.findByIdAndDelete(req.params.id);
     if (!cv) {
       return res.status(404).json({ message: 'CV non trouvé' });
     }
-    res.status(204).send(); // No Content
+    res.status(204).send();
   } catch (err) {
     res.status(500).json({ message: 'Erreur lors de la suppression du CV', error: err.message });
   }
 });
 
+router.post('/:id/recommendations', authMiddleware, async (req, res) => {
+  const cvId = req.params.id;
+  const { commentaire } = req.body;
 
+  try {
+    const utilisateurId = req.user.userId;
+    const utilisateur = await User.findById(utilisateurId);
+
+    if (!utilisateur) {
+      return res.status(404).json({ message: "Utilisateur non trouvé" });
+    }
+
+    const nouvelleRecommandation = {
+      utilisateurNom: utilisateur.nom,
+      commentaire,
+      date: new Date(),
+    };
+
+    const cv = await CV.findById(cvId);
+    if (!cv) {
+      return res.status(404).json({ message: "CV non trouvé" });
+    }
+
+    cv.recommandations.push(nouvelleRecommandation);
+    await cv.save();
+
+    res.status(201).json({ message: "Recommandation ajoutée avec succès", recommandation: nouvelleRecommandation });
+  } catch (err) {
+    res.status(500).json({ message: "Erreur lors de l'ajout de la recommandation", error: err.message });
+  }
+});
 
 module.exports = router;

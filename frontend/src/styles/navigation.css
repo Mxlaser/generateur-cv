@@ -1,53 +1,65 @@
-/* Barre de navigation */
+/* navigation.css */
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff;
+}
+
+/* Style de la barre de navigation */
 .navbar {
-    background-color: #3498db;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 100px;
-  }
-  
-  .nav-logo a {
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    display: inline;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #f1c40f; 
-  }
-  
-  .logout-button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.1em;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 20px;
-  }
-  
-  .logout-button:hover {
-    color: #f1c40f; 
-  }
-  
+  display: flex; /* Utilise Flexbox pour aligner les éléments */
+  justify-content: space-between; /* Espacement entre logo et liens */
+  align-items: center; /* Centre verticalement les éléments */
+  background-color: #007bff; /* Couleur de fond bleue */
+  padding: 10px 20px; /* Espacement autour de la barre de navigation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour la profondeur */
+}
+
+/* Style du logo */
+.nav-logo {
+  font-size: 1.8rem; /* Taille de police pour le logo */
+  color: white; /* Couleur du texte */
+  text-decoration: none; /* Pas de soulignement */
+}
+
+/* Style des liens de navigation */
+.nav-links {
+  list-style: none; /* Supprime les puces de la liste */
+  display: flex; /* Utilise Flexbox pour les liens */
+  gap: 20px; /* Espace entre les liens */
+}
+
+/* Style de chaque lien */
+.nav-links li {
+  font-size: 1rem; /* Taille de police pour les liens */
+}
+
+.nav-links a {
+  color: white; /* Couleur des liens */
+  text-decoration: none; /* Pas de soulignement */
+  transition: color 0.3s; /* Transition pour l'effet de survol */
+}
+
+/* Effet de survol pour les liens */
+.nav-links a:hover {
+  color: #e0e0e0; /* Couleur plus claire au survol */
+}
+
+/* Style du bouton de déconnexion */
+.logout-button {
+  background-color: #dc3545; /* Rouge pour le bouton de déconnexion */
+  color: white; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 8px 12px; /* Espacement interne */
+  cursor: pointer; /* Curseur en main pour le bouton */
+  transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+/* Effet de survol pour le bouton de déconnexion */
+.logout-button:hover {
+  background-color: #c82333; /* Couleur plus foncée au survol */
+}

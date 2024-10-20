@@ -36,6 +36,13 @@ const cvSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
+  recommandations: [
+    {
+      utilisateurNom: String,
+      commentaire: String,
+      date: Date,
+    },
+  ],
   dateCréation: {
     type: Date,
     default: Date.now,

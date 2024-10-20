@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/login.css';
+import '../styles/register.css';
 
 function Register() {
   const [userData, setUserData] = useState({
@@ -27,25 +27,27 @@ function Register() {
   };
 
   return (
-    <div className="page-container">
-      <h2 className="page-title">Inscription</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nom :</label>
-          <input type="text" name="name" value={userData.name} onChange={handleChange} required />
-        </div>
-        <div>
-          <label>Email :</label>
-          <input type="email" name="email" value={userData.email} onChange={handleChange} required />
-        </div>
-        <div>
-          <label>Mot de passe :</label>
-          <input type="password" name="password" value={userData.password} onChange={handleChange} required />
-        </div>
-        <div className="form-buttons">
-          <button type="submit">S'inscrire</button>
-        </div>
-      </form>
+    <div className="page-container-register">
+      <div className="form">
+        <h2 className="page-title">Inscription</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Nom :</label>
+            <input type="text" name="name" value={userData.name} onChange={handleChange} required />
+          </div>
+          <div>
+            <label>Email :</label>
+            <input type="email" name="email" value={userData.email} onChange={handleChange} required />
+          </div>
+          <div>
+            <label>Mot de passe :</label>
+            <input type="password" name="password" value={userData.password} onChange={handleChange} required />
+          </div>
+          <div className="form-buttons">
+            <button type="submit">S'inscrire</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

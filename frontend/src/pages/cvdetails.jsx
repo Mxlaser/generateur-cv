@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/CVDetails.css'; 
+import '../styles/CVDetails.css';
 
 function CVDetails() {
-  const { id } = useParams(); // Récupérer l'ID du CV à partir de l'URL
+  const { id } = useParams();
   const [cv, setCv] = useState(null);
+  const [recommandations, setRecommandations] = useState([]);
+  const [nouvelleRecommandation, setNouvelleRecommandation] = useState('');
 
   useEffect(() => {
     const fetchCv = async () => {
       const token = localStorage.getItem('token');
+      if (!token) {
+        console.error("Utilisateur non authentifié");
+        return;
+      }
+      
       try {
         const response = await axios.get(`http://localhost:5000/api/cvs/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setCv(response.data);
+        setRecommandations(response.data.recommandations);
       } catch (error) {
         console.error('Erreur lors de la récupération du CV', error);
       }
@@ -22,6 +30,31 @@ function CVDetails() {
 
     fetchCv();
   }, [id]);
+
+  const ajouterRecommandation = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.error("Utilisateur non authentifié");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `http://localhost:5000/api/cvs/${id}/recommendations`,
+        { commentaire: nouvelleRecommandation },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      if (response.status === 201) {
+        setRecommandations([...recommandations, response.data.recommandation]);
+        setNouvelleRecommandation('');
+      } else {
+        console.error("Erreur lors de l'ajout de la recommandation", response);
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'ajout de la recommandation", error);
+    }
+  };
 
   if (!cv) {
     return <p>Chargement des détails du CV...</p>;
@@ -54,6 +87,25 @@ function CVDetails() {
           </li>
         ))}
       </ul>
+
+      <h3>Recommandations</h3>
+      <ul>
+        {recommandations.map((rec, index) => (
+          <li key={index}>
+            <p><strong>{rec.utilisateurNom || 'Anonyme'} :</strong> {rec.commentaire}</p>
+            <p>Date : {new Date(rec.date).toLocaleDateString()}</p>
+          </li>
+        ))}
+      </ul>
+
+      <div className="nouvelle-recommandation">
+        <textarea
+          value={nouvelleRecommandation}
+          onChange={(e) => setNouvelleRecommandation(e.target.value)}
+          placeholder="Ajouter une recommandation"
+        />
+        <button onClick={ajouterRecommandation}>Ajouter</button>
+      </div>
     </div>
   );
 }

@@ -54,7 +54,7 @@ function CreateCV() {
   
 
   return (
-    <div className="page-container">
+    <div className="page-container-cv">
       <h2 className="page-title">Créer un CV</h2>
       <form onSubmit={handleSubmit}>
         <div>

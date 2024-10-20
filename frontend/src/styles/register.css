@@ -1,0 +1,71 @@
+/* register.css */
+
+/* Conteneur principal pour la page d'inscription */
+.page-container-register {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100vh; /* Hauteur complète de la fenêtre */
+    background-color: #f0f4f8; /* Couleur de fond légère */
+  }
+  
+  /* Style du formulaire d'inscription */
+  .form {
+    background-color: white; /* Fond blanc pour le formulaire */
+    padding: 40px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    max-width: 400px; /* Largeur maximale du formulaire */
+    width: 100%; /* Prend toute la largeur disponible */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+  }
+  
+  /* Style des titres */
+  .page-title {
+    text-align: center; /* Centre le titre */
+    margin-bottom: 20px; /* Espacement en bas */
+  }
+  
+  /* Style des champs du formulaire */
+  .page-container-register div {
+    margin-bottom: 15px; /* Espacement entre les champs */
+  }
+  
+  /* Style des étiquettes */
+  .page-container-register label {
+    display: block; /* Affiche les étiquettes sur une nouvelle ligne */
+    margin-bottom: 5px; /* Espacement en bas des étiquettes */
+    font-weight: bold; /* Met en gras les étiquettes */
+  }
+  
+  /* Style des champs de saisie */
+  .page-container-register input {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure grise claire */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 1rem; /* Taille de la police */
+  }
+  
+  /* Style du bouton de soumission */
+  .form-buttons {
+    text-align: center; /* Centre le bouton */
+  }
+  
+  .form-buttons button {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 10px; /* Espacement interne */
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 1rem; /* Taille de la police */
+    cursor: pointer; /* Curseur en main pour le bouton */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+  }
+  
+  /* Effet de survol pour le bouton */
+  .form-buttons button:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+  }
+  

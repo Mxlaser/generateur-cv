@@ -1,81 +1,104 @@
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  .page-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .cv-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .cv-visibility {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .cv-visibility button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cv-visibility button:hover {
-    background-color: #2980b9;
-  }
+/* profil.css */
 
-  .cv-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .cv-visibility {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-  }
-  
-  button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  .edit-button {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  .delete-button {
-    background-color: #e74c3c;
-    color: white;
-  }
+/* Styles généraux pour la page */
+body {
+  margin: 0; /* Suppression des marges par défaut */
+  padding: 0; /* Suppression du padding par défaut */
+  font-family: Arial, sans-serif; /* Choix de la police */
+  background-color: #f0f0f0; /* Couleur de fond pour toute la page */
+}
+
+.page-container-profil {
+  max-width: 800px; /* Largeur maximale de la page */
+  margin: 20px auto; /* Centrage horizontal avec une marge en haut */
+  padding: 20px; /* Espacement interne */
+  background-color: #ffffff; /* Couleur de fond blanche */
+  border: 1px solid #ccc; /* Bordure grise */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Titre de la page */
+.page-title {
+  text-align: center; /* Centrer le titre */
+  font-size: 2rem; /* Taille de police pour le titre */
+  color: #333; /* Couleur du texte */
+  margin-bottom: 20px; /* Marge en bas */
+}
+
+/* Styles pour la liste des CV */
+ul {
+  list-style-type: none; /* Pas de puces pour la liste */
+  padding: 0; /* Suppression du padding par défaut */
+}
+
+/* Styles pour chaque carte de CV */
+.cv-card {
+  background-color: #f9f9f9; /* Couleur de fond légère pour chaque carte */
+  border: 1px solid #ddd; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 15px; /* Espacement interne */
+  margin-bottom: 15px; /* Marge entre les cartes */
+  transition: box-shadow 0.3s; /* Animation pour l'ombre */
+}
+
+/* Effet de survol pour les cartes de CV */
+.cv-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus forte au survol */
+}
+
+/* Styles pour les titres des CV */
+.cv-card h3 {
+  margin: 0; /* Suppression des marges par défaut */
+  font-size: 1.5rem; /* Taille de police pour le titre de chaque CV */
+  color: #007bff; /* Couleur bleue */
+}
+
+/* Styles pour la description du CV */
+.cv-card p {
+  color: #666; /* Couleur du texte pour la description */
+  margin: 10px 0; /* Marge autour de la description */
+}
+
+/* Styles pour la section de visibilité */
+.cv-visibility {
+  display: flex; /* Utilisation de flexbox pour la disposition */
+  align-items: center; /* Centrer verticalement */
+  justify-content: space-between; /* Espacement entre les éléments */
+  margin-top: 10px; /* Marge au-dessus */
+}
+
+/* Styles pour les boutons */
+button {
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Couleur du texte blanc */
+  padding: 10px 15px; /* Espacement interne */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur en main pour le bouton */
+  font-size: 1rem; /* Taille de police du bouton */
+  transition: background-color 0.3s; /* Animation pour le changement de couleur */
+}
+
+/* Effets de survol pour les boutons */
+button:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Styles spécifiques pour les boutons d'édition et de suppression */
+.edit-button {
+  background-color: #28a745; /* Vert pour le bouton d'édition */
+  margin-left: 10px; /* Marge à gauche */
+}
+
+.delete-button {
+  background-color: #dc3545; /* Rouge pour le bouton de suppression */
+}
+
+.edit-button:hover {
+  background-color: #218838; /* Couleur plus foncée au survol */
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Couleur plus foncée au survol */
+}
