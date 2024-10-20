@@ -4,6 +4,15 @@ const CV = require('../models/CV');
 
 const router = express.Router();
 
+router.get('/users', authMiddleware, async (req, res) => {
+  try {
+    const cvs = await CV.find({ utilisateurId: req.user.userId });
+    res.json(cvs);
+  } catch (err) {
+    res.status(500).json({ message: 'Erreur lors de la récupération des CV', error: err.message });
+  }
+});
+
 // Créer un nouveau CV
 router.post('/', authMiddleware, async (req, res) => {
   try {
@@ -55,7 +64,7 @@ router.put('/:id', authMiddleware, async (req, res) => {
     const cv = await CV.findByIdAndUpdate(
       req.params.id,
       { nom, prénom, description, experiencesPédagogiques, experiencesProfessionnelles, visibilité, dateModification: Date.now() },
-      { new: true, runValidators: true } // renvoie le CV mis à jour
+      { new: true, runValidators: true }
     );
 
     if (!cv) {
@@ -79,5 +88,7 @@ router.delete('/:id', authMiddleware, async (req, res) => {
     res.status(500).json({ message: 'Erreur lors de la suppression du CV', error: err.message });
   }
 });
+
+
 
 module.exports = router;

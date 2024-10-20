@@ -1,0 +1,61 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import '../styles/CVDetails.css'; 
+
+function CVDetails() {
+  const { id } = useParams(); // Récupérer l'ID du CV à partir de l'URL
+  const [cv, setCv] = useState(null);
+
+  useEffect(() => {
+    const fetchCv = async () => {
+      const token = localStorage.getItem('token');
+      try {
+        const response = await axios.get(`http://localhost:5000/api/cvs/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setCv(response.data);
+      } catch (error) {
+        console.error('Erreur lors de la récupération du CV', error);
+      }
+    };
+
+    fetchCv();
+  }, [id]);
+
+  if (!cv) {
+    return <p>Chargement des détails du CV...</p>;
+  }
+
+  return (
+    <div className="cv-details-container">
+      <h2>Détails du CV de {cv.nom} {cv.prénom}</h2>
+      <p>Description : {cv.description}</p>
+
+      <h3>Expériences Pédagogiques</h3>
+      <ul>
+        {cv.experiencesPédagogiques.map((exp, index) => (
+          <li key={index}>
+            <p>Diplôme : {exp.diplôme}</p>
+            <p>Institution : {exp.institution}</p>
+            <p>Date d'obtention : {new Date(exp.dateObtention).toLocaleDateString()}</p>
+          </li>
+        ))}
+      </ul>
+
+      <h3>Expériences Professionnelles</h3>
+      <ul>
+        {cv.experiencesProfessionnelles.map((exp, index) => (
+          <li key={index}>
+            <p>Poste : {exp.poste}</p>
+            <p>Entreprise : {exp.entreprise}</p>
+            <p>Date de début : {new Date(exp.dateDébut).toLocaleDateString()}</p>
+            <p>Date de fin : {exp.dateFin ? new Date(exp.dateFin).toLocaleDateString() : 'En cours'}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default CVDetails;

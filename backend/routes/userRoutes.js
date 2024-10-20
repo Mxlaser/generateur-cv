@@ -73,7 +73,7 @@ router.post('/login', async (req, res) => {
 
 //********************************************** à enlever ptet
 // Route protégée pour obtenir les informations de l'utilisateur connecté
-router.get('/profile', authMiddleware, async (req, res) => {
+router.get('/profil', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.userId).select('-password'); // Ne pas renvoyer le mot de passe
     if (!user) {
